@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+    Birthday
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/> 
+	  <style type="text/css">
+	  	@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url(background.jpg);
+  background-size: cover;
+  background-color: black;
+  position: relative;
+  z-index: 1; /* keep above hearts */
+}
+
+h1 {
+   font-size: calc(10px + 15vh);
+   line-height: calc(10px + 25vh);
+/* text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+   text-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 60px #ffffff, 0 0 10px #ec96c8, 0 0 98px #ec96c8;
+   color: #fff6a9;
+   font-family: "BAZOOKA", cursive;
+   text-align: center;
+   animation: blink 5s infinite;
+  -webkit-animation: blink 5s infinite;
+}
+
+.Happy {
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background: #222;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 7px,
+    rgba(0, 0, 0, 0.8) 9px,
+    rgba(0, 0, 0, 0.8) 13px,
+    transparent 13px
+  );
+}
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #080808;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+/*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+  text-shadow: 0 0 0px #ec96c8, 0 0 0px #ec96c8, 0 0 20px #ec96c8, 0 0 40px #ec96c8, 0 0 60px #ec96c8, 0 0 10px #ec96c8, 0 0 98px #ec96c8;
+    color: #ec96c8;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+  text-shadow: 0 0 0px #ffffff, 0 0 0px #ffffff, 0 0 0px #ffffff, 0 0 0px #ffffff, 0 0 60px #ffffff, 0 0 10px #ffffff, 0 0 98px #ffffff;
+    color: #ec96c8;
+  }
+}
+.pic{
+	background-color:#050505;
+	background-image: repeating-linear-gradient(
+	    to bottom,
+	    transparent 7px,
+	    rgba(0, 0, 0, 0.8) 9px,
+	    rgba(0, 0, 0, 0.8) 13px,
+	    transparent 13px
+	  );
+	max-width:100%;
+	height: 900px;
+	
+}
+.main {
+  display: flex;
+  overflow: hidden;
+  height: 0vw;
+  background: #333;
+  max-width:80%;
+  margin-left:10%;
+  height:500px;
+  border:10px solid #ec96c8;
+}
+ 
+.main img {
+  width:20vw;
+  height:310px; 
+  vertical-align: middle;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  transition: opacity .5s;
+}
+ 
+.main:hover img {
+  opacity: 0.5;
+}
+ 
+.main img:hover {
+  opacity: 1;
+}
+ 
+.main .single-column {
+	animation:slide 16s infinite linear;
+}
+ 
+.main .single-column:hover {
+	animation-play-state: paused;
+}
+ 
+.main .single-column:nth-of-type(odd) {
+  align-self: flex-end;
+  --direction: 40%;
+}
+
+.envelopes {
+  text-align: center;
+  margin: -360px auto;
+}
+
+.envelopes img {
+  width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.envelopes img:hover {
+  transform: scale(1.1);
+}
+
+.popup-card {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff6a9;
+  color: #333;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #ec96c8;
+  text-align: center;
+  font-family: 'BAZOOKA', cursive;
+  font-size: 24px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ec96c8;
+}
+ 
+@keyframes slide {
+  to {
+    -webkit-transform: translateY(var(--direction, -50%));
+            transform: translateY(var(--direction, -50%));
+  }
+}
+
+@media screen and (max-width:550px){
+	h1{
+		font-size:70px;
+		line-height:15vh;
+	}
+
+	.main{
+		border:3px solid #fff6a9;
+		max-width:90%;
+		margin-left:5%;
+		height:70vh;
+	}
+	.main img{
+		width:22vw;
+		border:1px solid white;
+		height:200px;
+	}
+	
+ 	.main .single-column:nth-of-type(odd) {
+  align-self: flex-end;
+  --direction: 35%;
+}
+	
+}
+
+/* New hearts background styles */
+.hearts-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* clicks pass through */
+  overflow: hidden;
+  z-index: 0; /* behind everything */
+}
+
+.heart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 105, 180, 0.4);
+  transform: rotate(-45deg);
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0.7;
+  filter: drop-shadow(0 0 2px #ec96c8);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 105, 180, 0.4);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 2px #ec96c8);
+}
+
+.heart::before {
+  top: -7.5px;
+  left: 0;
+}
+
+.heart::after {
+  left: 7.5px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(-45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+	  </style>
+</head>
+<body onclick="document.getElementById('bg-audio').play()">
+
+<!-- Hearts background -->
+<div class="hearts-bg" aria-hidden="true">
+  <div class="heart" style="left:5%; animation-duration: 12s; animation-delay: 0s;"></div>
+  <div class="heart" style="left:15%; animation-duration: 10s; animation-delay: 2s;"></div>
+  <div class="heart" style="left:25%; animation-duration: 14s; animation-delay: 4s;"></div>
+  <div class="heart" style="left:35%; animation-duration: 11s; animation-delay: 1s;"></div>
+  <div class="heart" style="left:45%; animation-duration: 13s; animation-delay: 3s;"></div>
+  <div class="heart" style="left:55%; animation-duration: 15s; animation-delay: 5s;"></div>
+  <div class="heart" style="left:65%; animation-duration: 12s; animation-delay: 6s;"></div>
+  <div class="heart" style="left:75%; animation-duration: 10s; animation-delay: 7s;"></div>
+  <div class="heart" style="left:85%; animation-duration: 14s; animation-delay: 8s;"></div>
+  <div class="heart" style="left:95%; animation-duration: 11s; animation-delay: 9s;"></div>
+  <div class="heart" style="left:10%; animation-duration: 13s; animation-delay: 2.5s;"></div>
+  <div class="heart" style="left:20%; animation-duration: 15s; animation-delay: 4.5s;"></div>
+  <div class="heart" style="left:30%; animation-duration: 12s; animation-delay: 1.5s;"></div>
+  <div class="heart" style="left:40%; animation-duration: 10s; animation-delay: 3.5s;"></div>
+  <div class="heart" style="left:50%; animation-duration: 14s; animation-delay: 5.5s;"></div>
+  <div class="heart" style="left:60%; animation-duration: 11s; animation-delay: 0.5s;"></div>
+  <div class="heart" style="left:70%; animation-duration: 13s; animation-delay: 2.2s;"></div>
+  <div class="heart" style="left:80%; animation-duration: 15s; animation-delay: 4.8s;"></div>
+  <div class="heart" style="left:90%; animation-duration: 12s; animation-delay: 6.1s;"></div>
+  <div class="heart" style="left:50%; animation-duration: 10s; animation-delay: 7.3s;"></div>
+</div>
+
+  <audio id="bg-audio" src="happybirthday.mp3" loop hidden></audio>
+  <div class="Happy">
+	<h1>Happy Birthday <br> 
+             Ate Yuka 🎂! 
+	</h1>
+</div>
+<div class="pic">
+   <div class="main">
+	 <div class="single-column">
+		<a href="#"><img src="pic1.jpg" alt="image"></a>
+		<a href="#"><img src="pic2.jpg" alt="image"></a>
+    <a href="#"><img src="pic7.jpg" alt="image"></a>
+
+	</div>
+	<div class="single-column">
+		<a href="#"><img src="pic3.jpg" alt="image"></a>
+		<a href="#"><img src="pic4.jpg" alt="image"></a>
+    <a href="#"><img src="pic9.jpg" alt="image"></a>
+
+	</div>
+	<div class="single-column">
+    <a href="#"><img src="pic5.jpg" alt="image"></a>
+    <a href="#"><img src="pic6.jpg" alt="image"></a>
+    <a href="#"><img src="pic1.jpg" alt="image"></a>
+	</div>
+	<div class="single-column">
+    <a href="#"><img src="pic7.jpg" alt="image"></a>
+    <a href="#"><img src="pic8.jpg" alt="image"></a>
+    <a href="#"><img src="pic10.jpg" alt="image"></a>
+	</div>
+    </div>
+</div>
+
+<!-- Envelopes Section -->
+<div class="envelopes">
+  <img src="envelope.jpg"
+       alt="Envelope"
+       onclick="showCard(0)">
+  <img src="envelope.jpg"
+       alt="Envelope"
+       onclick="showCard(1)">
+  <img src="envelope.jpg"
+       alt="Envelope"
+       onclick="showCard(2)">
+</div>
+
+<div id="popupCards">
+  <div class="popup-card" id="card0">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeCard(0)">&times;</span>
+      <p>
+  Happy Birthday, Ate Yuka!<br><br>
+
+  Even from miles away, you never fail to make us feel your love. You're always ready to help, brighten our days with little things, and bring joy wherever you go—that's just who you are, and we're so thankful for you!<br><br>
+
+  We miss you so much, but we hope you're enjoying your life there.<br><br>
+
+  Have the most amazing birthday, Ate Yuka—you deserve all the happiness in the world.<br><br>
+
+  We love you and can’t wait to see you again soon! 💛✨💖<br><br>
+
+  – Prixie
+</p>
+    </div>
+  </div>
+  <div class="popup-card" id="card1">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeCard(1)">&times;</span>
+        <p>
+      Happy Birthday, Ate Yuks!<br><br>
+
+      I just want to wish you a happy birthday and thank you—deeply and sincerely.<br><br>
+
+      Thank you for being one of the most selfless people I know. You always give without expecting anything in return and are always there when others need you. You’ve always been there, quietly helping. I am so grateful for everything you do—for the big sacrifices, and even the little things that often go unnoticed but never unappreciated.<br><br>
+
+      Thank you so much for everything, Ate Yuks. Thank you for you and Auntie Malou. I truly wish you all the best things in the world. Hope to see you again soon. Happy Birthday! 🌟<br><br>
+
+      – Chloe
+    </p>
+    </div>
+  </div>
+  <div class="popup-card" id="card2">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeCard(2)">&times;</span>
+   <p>
+      💌 Hello, Ate Yuka, happy birthday!<br><br>
+
+      Here’s a message of appreciation for everything you’ve done for me over the past few years. No words can express how deeply grateful I am—for being an Ate who’s always there.<br><br>
+
+      From the bottom of my heart dyud thank you thank you thank you so much, Ate Yuka. Hope to see you soon, puhon, puhon. Enjoy your day! Happy Birthday! Lab youu!<br><br>
+
+      – Ashley 💖🥳
+    </p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showCard(i) {
+  document.getElementById("card" + i).style.display = "flex";
+}
+function closeCard(i) {
+  document.getElementById("card" + i).style.display = "none";
+}
+</script>
+</body>
+</html>
